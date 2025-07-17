@@ -5,7 +5,7 @@ import { useState,  useRef, useEffect } from "react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-var buttons = ['Introduction - B707 IAF tanker "Reem"', 'Air Refueling - Normal NATO Procedure', 'Emergency Procedure', 'Tips and Examples'];
+var buttons = ['Introduction - B707 IAF tanker "Reem"', 'Air Refueling - Normal NATO Procedure', 'Emergency Procedures', 'Tips and Examples'];
 
 var pageTitles = {
   'Introduction - B707 IAF tanker "Reem"': {
@@ -18,28 +18,28 @@ var pageTitles = {
     'title7': 'F-15 Air Refueling',
   },
   'Air Refueling - Normal NATO Procedure' : {
-    'title1': 'Rendevous With Tanker',
+    'title1': 'Rendevous with Tanker',
     'title2': 'Joining the Tanker',
     'title3': 'Echelon',
     'title4': 'Astern Position',
     'title5': 'Contact',
-    'title6': 'Video',
+    'title6': 'Video Example',
   },
-  'Emergency Procedure': {
+  'Emergency Procedures': {
     'title1': 'Breakaway',
     'title2': 'Loss of Visual Contact',
     'title3': 'Safety Tips',
   },
   'Tips and Examples': {
     'title1': 'Tips',
-    'title2': 'Reciever is unstable and disobedient',
-    'title3': 'Receiver approaching too fast and close',
+    'title2': 'Unstabilized receiver',
+    'title3': 'Receiver approaches too fast and close',
     'title4': '"Overrun" - receiver approaches too quickly and fails',
     'title5': 'Incorrect Astern Position - Rear',
     'title6': 'Incorrect Astern Position - Low',
     'title7': 'Incorrect Astern Position - Front',
     'title8': 'Incorrect Astern Position - High',
-    'title9': 'Procedures Words Summarize',
+    'title9': 'Summary',
   },
 }
 
@@ -48,8 +48,8 @@ var pageContent = {
     'title': '"Reem" - Israeli Air Refuling Tanker',
     'text': [
       'Refueling fighter jets - **F15, F16, F35** | C130',
-      '5 crew members - 2 Pilots, Flight Engineer, Navigator and Boom operator',
-      `B707 tanker - with **Boom only (no probe and drogue)**`,
+      '5 crew members - 2 Pilots, Flight Engineer, Navigator and Boom Operator',
+      `B707 tanker - with **boom only (no probe and drogue)**`,
     ],
     'image': ['assets/images/Introduction.jpg'],
     // 'image': ['/assets/images/Introduction.jpg'],
@@ -62,44 +62,39 @@ var pageContent = {
     'text': [
       "The telescope is an inner tube inside the boom which enables the fuel pipe to move back and forth according to the receiver's position",
       "The range of movement of the boom is limited, so **the receiver must be in the center of the envelope and listen to the boomer's instructions**",
-      'The fuel nozzle at the aft of the telescope is opened and closed automatically when the receiver and the tanker get signal',
+      'The fuel nozzle at the aft part of the telescope is opened and closed automatically when the receiver and the tanker get signal',
     ],
     'image': ['assets/images/Boom1.jpg', 'assets/images/Boom2.jpg'],
-    // 'image': ['/assets/images/Boom1.jpg', '/assets/images/Boom2.jpg'],
   },
   'Tanker Lights': {
     'image': ['assets/images/TankerLights.png'],
-    // 'image': ['/assets/images/TankerLights.png'],
     'text': [
-      '**Wing lights** - illuminates wing surface to serve as a reference to the receiver aircraft during night operation',
+      '**Wing lights** - illuminates wing surface and the engines to serve as a horizontal reference to the receiver aircraft during night operation',
       '**Rudder light** - illuminates the tanker rudder to serve as a reference for the receiver aircraft during night operation',
-      '**Fuel flow light** - One blue light, located between the two director light strips. The light illuminates when fuel is being transferred to the recieving aircraft',
-      '**Beta lights** - phosphoric lights located along the boom, helps the receiver aircraft pilot to locate the boom during night operation',
+      '**Fuel flow light** - one blue light, located between the two director light strips. The light illuminates when fuel is being transferred to the recieving aircraft',
+      '**Beta lights** - unadjusable phosphoric lights located along the boom, helps the receiver aircraft pilot to locate the boom during night operation',
     ],
   },
   'Director Lights': {
     'text': [
       'The director lights system directs the recieving aircraft to approach and stay in the air refueling envelope limits',
-      'The lights comprise two strips of lights located on the belly of the fuselage. The director lights are located between the wings and the A/R boom outlet',
+      'The lights are comprised of two strips of lights located on the belly of the fuselage. The director lights are located between the wings and the A/R boom outlet',
       'The left lights strip is used for **elevation signals**. The right light strip is used for **fwd and aft signals**',
     ],
     'image': ['assets/images/DirectorLights1.jpg', 'assets/images/DirectorLights2.png'],
-    // 'image': ['/assets/images/DirectorLights1.jpg', '/assets/images/DirectorLights2.png'],
   },
   'Director Lights - Animation': {
-    // 'animation': 'animation',
-    'video': 'assets/videos/Director Lights - Animation.mp4',
+    'animation': 'assets/videos/Director Lights - Animation.mp4',
   },
   'F-15 Air Refueling': {
     'image': ['assets/images/F15_1.png', 'assets/images/F15_2.png'],
-    // 'image': ['/assets/images/F15_1.png', '/assets/images/F15_2.png'],
     'text': [
       'The F-15 receptacle is located 4 feet left from the center of the airplane',
       'F-15 fighter should align by the red stripe in the right hand wheel well of the tanker',
       'During night A/R the tanker will light the red stripe',
     ],
   },
-  'Rendevous With Tanker': {
+  'Rendevous with Tanker': {
     'title': 'Preparations',
     'text': [
       'First plane of each formation - activate TACAN A/A',
@@ -107,10 +102,10 @@ var pageContent = {
       'Airspeed - 300K CAS',
       'Before entering the CTR - contact join freq'
     ],
-    'title2': 'Fighter report = "Judy / Radar contact"',
+    'title2': 'Fighter report: "judy / radar contact"',
     'text2': [
-      'radar contact with the tanker',
-      'receiver taking over responsibility for closing to within visual range',
+      'Radar contact with the tanker',
+      'Receiver taking over responsibility for closing to within visual range',
     ],
   },
   'Joining the Tanker': {
@@ -119,12 +114,12 @@ var pageContent = {
       `1st formation - 1000' below tanker | left side`,
       `2nd formation - 2000' below tanker | 1 mile behind 1st formation`,
     ],
-    'title2': '"Visual"',
+    'title2': 'Fighter report: "visual"',
     'text2': [
-      'Fighter report "Visual" when have eye contact with the tanker',
+      'Fighter report "visual" when eye contact is established with the tanker',
       `**Climbing more than 1000' below tanker is forbidden without visual**`,
     ],
-    'title3': 'After visual tanker will report "Join echelon left, contact boom frequency"',
+    'title3': 'After visual: tanker will report "Join echelon left, contact boom frequency"',
   },
   'Echelon': {
     'title': 'Echelon Left',
@@ -139,7 +134,7 @@ var pageContent = {
     ],
   },
   'Astern Position': {
-    'title': 'Boom operator will advise receiver "clear astern"',
+    'title': 'Boom operator will advise receiver: "clear astern"',
     'title2': 'Joining Tanker',
     'text2': [
       '50 feet behind the boom | on its axis',
@@ -147,115 +142,102 @@ var pageContent = {
       'The boom is between the director lights',
     ],
     'image': ['assets/images/SideView.png', 'assets/images/CorrectPosition.jpg'],
-    // 'image': ['/assets/images/SideView.png', '/assets/images/CorrectPosition.jpg'],
   },
   'Contact': {
-    'title': 'Boom operator will advise receiver "clear contact"',
+    'title': 'Boom operator will advise receiver: "clear contact"',
     'title2': 'Boom operator will use director lights or oral direction to keep the receiver on a good position',
     'text2': [
       '"Up / Down"',
       '"Forward / Back"',
       '"Left / Right"',
     ],
-    'title3': 'Boom operator may use a 1-5 scale to be more specific',
+    'title3': 'Boom operator may use a 1-5 foot scale to be more specific',
     'text3': [
       '"3 right" (fighter is too much to the left)',
       '"4 up" (fighter is too low)',
     ],
   },
-  'Video': {
-    'video': 'assets/videos/Video.mp4',
+  'Video Example': {
+    'animation': 'assets/videos/Video.mp4',
   },
   'Breakaway': {
-    'title': 'An emergency in either the tanker or the receiver may require a quick seperation between the airplanes',
-    'title2': 'A radio call and appropriate visual signals will be given',
-    'title3': 'Reasons for breakaway',
-    'text3': [
+    'title': 'An emergency in which either the tanker or the receiver may require a quick seperation between the airplanes',
+    'title2': 'Reasons for breakaway',
+    'text2': [
       'receiver under runs the tanker',
       'the tanker has a malfunction',
       'receiver is judged to be flying erratically',
     ],
+    'title3': 'Boom operator will report: "BREAKAWAY, BREAKAWAY, BREAKAWAY" and 4 red outer director lights will flash',
     'video': ['assets/videos/BreakAway.mp4'],
-    // 'video': ['/assets/videos/BreakAway.mp4'],
   },
   'Loss of Visual Contact': {
-    'title': 'Any aircraft in closed formation that loses visual contact with the tanker or the receiver has to take immidiate action to achieve safe seperation',
+    'title': 'A situation in which any aircraft in close formation that loses visual contact has to take immediate action to achieve safe separation',
     'text': [
-      'In astern or Contact: slow down 10kts for 30 sec, descend 500ft below the tanker',
-      "In Echeclon: (No 1) turn away from the tanker's heading using 15 deg for 15 sec (15:15), (No 2) turn away from the tanker's heading using 30 deg for 30 sec (30:30), Etc..."
+      'In astern or contact position: decelerate 10kts for 30 sec, and descend 500ft below the tanker',
+      "In echeclon position: (No. 1) turn away from the tanker's heading using 15 deg for 15 sec (15:15), (No. 2) turn away from the tanker's heading using 30 deg for 30 sec (30:30), Etc..."
     ],
     'image': ['assets/images/LossOfVisual.png'],
-    // 'image': ['/assets/images/LossOfVisual.png'],
   },
   'Safety Tips': {
     'text': [
-      'Make sure you got the "Disconnect" announcement from the boom operator before exiting to Astern',
-      'If you feel anything wrong, or you are not stabilized during approach towards the boom, advise the boom operator and return to astern',
+      'Make sure you get the "disconnect" announcement from the boom operator before exiting to astern',
+      'If you feel unstablized or you feel anything wrong, advise the boom operator and return to astern',
       'In any dilemma you have during A/R - simplicity is key',
     ],
   },
   'Tips': {
     'text': [
-      "Astern position - some of the receivers have a tendency to reach too high so the boom operator is unable to see them. **Remember that when you are able to see the tanker, the boom operator doesn't always see you**",
-      'The receiver movements before and during contact position must be done gently and with small adjustments. **Quick movements around the boom is dangerous to the receiver and to the tanker**',
+      "**Remember! the boom operator doesn't always see you, even when you can see them.** The boom operator has a limited view through the cameras, so when the receiver reaches too high the boom operator is unable to see them",
+      "The receiver's movements before and during contact position must be done gently and with small adjustments. **Quick movements around the boom are dangerous to the receiver and to the tanker**",
       'After disconnecting - join echelon right via astern position',
-      'The Israeli boom operators have a tendency to use a lot of oral directions. **Please listen to the boom operator instructions and cooperate**',
+      'The Israeli boom operators have a tendency to use a lot of oral directions. **Please listen to the boom operator instructions and cooperate accordingly**',
     ],
   },
-  'Reciever is unstable and disobedient': {
+  'Unstabilized receiver': {
     'video': 'assets/videos/UnstableReceiver.mp4',
-    // 'video': '/assets/videos/UnstableReceiver.mp4',
   },
-  'Receiver approaching too fast and close': {
+  'Receiver approaches too fast and close': {
     'video': 'assets/videos/QuickApproach.mp4',
-    // 'video': '/assets/videos/QuickApproach.mp4',
   },
   '"Overrun" - receiver approaches too quickly and fails': {
     'video': 'assets/videos/overrun.mp4'
-    // 'video': '/assets/videos/overrun.mp4'
   },
   'Incorrect Astern Position - Rear': {
     'text': [
-      'The boom points lower than the beginning of the director lights',
-      'The boom wings (ruddervator) points to the wide part of the tanker'
+      'The boom point lower than the beginning of the director lights',
+      "The boom wings (ruddervators) point to the wide part of the tanker's fuselage"
     ],
     'image': ['assets/images/RearPosition1.png', 'assets/images/RearPosition2.png'],
-    // 'image': ['/assets/images/RearPosition1.png', '/assets/images/RearPosition2.png'],
   },
   'Incorrect Astern Position - Low': {
     'text': [
-      'The boom points very high and it looks like it pointed directly to the receiver pilot',
-      'The boom wings (ruddevators) points on the narrow part of the tanker aft',
+      'The boom point very high and it looks like it pointed directly to the receiver pilot',
+      "The boom wings (ruddevators) point on the narrow part of the tanker's fuselage",
     ],
     'image': ['assets/images/LowPosition1.png', 'assets/images/LowPosition2.png'],
-    // 'image': ['/assets/images/LowPosition1.png', '/assets/images/LowPosition2.png'],
   },
   'Incorrect Astern Position - Front': {
     'text': [
-      'the boom points behind the receiver pilot',
-      'The boom wings (ruddervators) points almost to the tail of the tanker',
+      'The boom point behind the receiver pilot',
+      "The boom wings (ruddervators) point almost to the tanker's tail",
     ],
     'image': ['assets/images/FrontPosition1.png', 'assets/images/FrontPosition2.png'],
-    // 'image': ['/assets/images/FrontPosition1.png', '/assets/images/FrontPosition2.png'],
   },
   'Incorrect Astern Position - High': {
     'text': [
-      'the boom points to the center of the  receiver',
-      `The boom wings (ruddervators) does'nt point to the beginning of the narrow part of the tanker's tail`,
+      'The boom point to the center of the  receiver',
+      `The boom wings (ruddervators) don't point to the beginning of the narrow part of the tanker's tail`,
     ],
     'image': ['assets/images/HighPosition1.png', 'assets/images/HighPosition2.png'],
-    // 'image': ['/assets/images/HighPosition1.png', '/assets/images/HighPosition2.png'],
   },
-  'Procedures Words Summarize': {
-    'pdf': 'assets/NATO_Air_Refeling.pdf'
-    // 'pdf': '/assets/NATO_Air_Refeling.pdf'
+  'Summary': {
+    'pdf': 'assets/NATO_Air_Refueling.pdf'
   },
 }
 
 
 function App() {
-
-  
   const [selectedButton, setSelectedButton] = useState('Introduction - B707 IAF tanker "Reem"');
   const [isSubMenu, setIsSubMenu] = useState(null);
   const [isOpenInfo, setIsOpenInfo] = useState(false);
@@ -676,7 +658,7 @@ const Arrows = ({currentPage, setNewPage, isLastPage, selectedButton, setSelecte
         {
           isLastPage ?
             selectedButton === buttons[buttons.length - 1] ?
-              <div className='back' onClick={onClickFinish}>Finish & Go back to start</div>
+              <div className='back' onClick={onClickFinish}>Finish & go back to start</div>
             :
               <div className='back' onClick={onClickBack}>Go to the next chapter</div>
           :
@@ -719,13 +701,13 @@ const Page = ({page, text, isFullScreen}) => {
           {/* <img src='/assets/images/Echelon.png' className='Echelon' alt='Echelon' /> */}
           <img src='assets/images/Echelon.png' className='Echelon' alt='Echelon' />
           <div className='nonImageEchelon'>
-            <div className='localTitleEchelon'>{pageContent[pageTitle].title}</div>
+            <div className='localTitleEchelon left'>{pageContent[pageTitle].title}</div>
             <div className='localTextEchelon'>
               {pageContent[pageTitle].text?.map((text, index) => (
                 <div className='textEchelon' key={index}>{text}</div>
               ))}
             </div>
-            <div className='localTitleEchelon'>{pageContent[pageTitle].title2}</div>
+            <div className='localTitleEchelon right'>{pageContent[pageTitle].title2}</div>
             <div className='localTextEchelon'>
               {pageContent[pageTitle].text2?.map((text2, index) => (
                 <div className='textEchelon' key={index}>{text2}</div>
@@ -811,10 +793,20 @@ const Content = ({pageTitle, isFullScreen}) => {
           })}
         </div>
       )}
-
       {content.animation && (
-        <div className='animationContainer'>
-          {content.animation}
+        <div className='animationSection'>
+          {[...Array(3)].map((_, index) => {
+            const videoKey = `animation${index === 0 ? '' : index + 1}`;
+
+            return content[videoKey] ? (
+              <div key={index} className='animationItem'>
+                <video controls className='pageAnimation'>
+                  <source src={content[videoKey]} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            ) : null;
+          })}
         </div>
       )}
 
